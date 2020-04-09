@@ -60,7 +60,20 @@ class HashTable:
 
         Fill this in.
         '''
-        pass
+        index = self._hash_mod(key)
+        current_pair = self.storage[index]
+        last_pair = None
+
+        while current_pair is not None and current_pair.key != key:
+            last_pair = current_pair
+            current_pair = last_pair.next
+        if current_pair is not None:
+            current_pair.value = value
+        else:
+            new_pair = LinkedPair(key, value)
+            new_pair.next = self.storage[index]
+            self.storage[index] = new_pair
+
 
 
 
