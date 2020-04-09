@@ -23,12 +23,18 @@ class HashTable:
 
         You may replace the Python hash with DJB2 as a stretch goal.
         '''
-        return hash(key)
+        hashed = hash(key)
+        return hashed
 
 
     def _hash_djb2(self, key):
         '''
         Hash an arbitrary key using DJB2 hash
+
+
+
+
+
 
         OPTIONAL STRETCH: Research and implement DJB2
         '''
